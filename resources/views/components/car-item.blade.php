@@ -1,12 +1,12 @@
 @props(['car', 'isInWatchlist' => false])
 
 <div class="car-item card" style="border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.08); transition: transform 0.3s ease, box-shadow 0.3s ease; overflow: hidden; background-color: #ffffff; max-width: 400px; margin-bottom: 1.5rem;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 24px rgba(0,0,0,0.12)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 16px rgba(0,0,0,0.08)';">
-  <a href="{{ route('car.show', $car) }}" style="display: block; position: relative; overflow: hidden; height: 220px;">
-    <img src="{{ $car->primaryImage?->getUrl() ?: '/img/no_image.jpg' }}" alt="{{ $car->getTitle() }}" class="car-item-img rounded-t" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.05)';" onmouseout="this.style.transform='scale(1.0)';" />
+  <a href="{{ route('car.show', $car) }}" style="display: block; position: relative; overflow: hidden; height: 220px;padding:8px">
+    <img src="{{ $car->primaryImage?->getUrl() ?: '/img/no_image.jpg' }}" alt="{{ $car->getTitle() }}" class="car-item-img rounded-t" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;border-radius: 8px;" onmouseover="this.style.transform='scale(1.05)';" onmouseout="this.style.transform='scale(1.0)';" />
   </a>
   <div class="p-medium" style="padding: 1.2rem 1.5rem;">
     <div class="flex items-center justify-between" style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.5rem;">
-      <small class="m-0 text-muted" style="color: #6c757d; font-size: 0.85rem; font-weight: 500; display: flex; align-items: center;">
+      <small class="m-0 text-muted" style="color: #6c757d;  display: flex; align-items: center;">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" style="width: 14px; height: 14px; margin-right: 4px;">
           <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
         </svg>
@@ -28,14 +28,14 @@
         </svg>
       </button>
     </div>
-    <h2 class="car-item-title" style="margin: 0.5rem 0; font-size: 1.25rem; font-weight: 600; color: #212529; line-height: 1.3; word-wrap: break-word;">
+    <h2 class="car-item-title" style="margin: 0.5rem 0;  color: #212529; line-height: 1.3; word-wrap: break-word;">
       {{ $car->getTitle() }}
     </h2>
-    <p class="car-item-price" style="font-size: 1.4rem; font-weight: 700; color: #0056b3; margin: 0.5rem 0 1rem;">${{ number_format($car->price, 0) }}</p>
+    <p class="car-item-price" style=" color: #0056b3; margin: 0.5rem 0 1rem;">${{ number_format($car->price, 0) }}</p>
     <hr style="margin: 0.8rem 0; border: 0; height: 1px; background-color: #eaeaea;" />
     <p class="m-0" style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: 0.8rem;">
-      <span class="car-item-badge" style="display: inline-block; padding: 4px 10px; font-size: 0.75rem; font-weight: 500; color: #505050; background-color: #f5f5f5; border-radius: 50px; line-height: 1.2;">{{ $car->carType->name }}</span>
-      <span class="car-item-badge" style="display: inline-block; padding: 4px 10px; font-size: 0.75rem; font-weight: 500; color: #505050; background-color: #f5f5f5; border-radius: 50px; line-height: 1.2;">{{ $car->fuelType->name }}</span>
+      <span class="car-item-badge" style="display: inline-block; padding: 4px 10px;  color: #505050; background-color: #f5f5f5; border-radius: 50px; line-height: 1.2;">{{ $car->carType->name }}</span>
+      <span class="car-item-badge" style="display: inline-block; padding: 4px 10px;  color: #505050; background-color: #f5f5f5; border-radius: 50px; line-height: 1.2;">{{ $car->fuelType->name }}</span>
     </p>
   </div>
 </div>
